@@ -15,6 +15,7 @@
   "main": "main",
   "dependencies": {},
   "jspm": {
+    "name": "jaredhanson/idpiframe",
     "registry": "github",
     "format": "amd",
     "dependencies": {

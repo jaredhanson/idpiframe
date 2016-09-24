@@ -1,15 +1,24 @@
-define(['exports'],
-function(exports) {
+define(['exports', 'querystring'],
+function(exports, qs) {
   
   exports.start = function() {
-    console.log(window.location)
+    var hash = window.location.hash.slice(1); // slice off leading `#`
+    var q = qs.parse(hash);
+    console.log(q)
+
+    var origin = q.origin;
+    var rpcToken = q.rpcToken;
     
     
     window.addEventListener('message', function (event) {
-      console.log('GOT MESSAGE FROM!');
-      console.log(event.origin);
-      //console.log(event.source)
-      console.info('data', event.data);
+      if (event.origin !== origin) { return; }
+      if (event.source !== window.parent) { return; }
+      // TODO: try/catch
+      var msg = JSON.parse(event.data);
+      if (msg.rpcToken !== rpcToken) { return; }
+
+      console.log('msg: ');
+      console.log(msg);
     
     });
   
