@@ -1,0 +1,20 @@
+{
+  "name": "jaredhanson/idpiframe",
+  "version": "0.0.0",
+  "description": "IDP IFrame.",
+  "authors": {
+    "name": "Jared Hanson",
+    "email": "jaredhanson@gmail.com",
+    "homepage": "http://www.jaredhanson.net/"
+  },
+  "registry": "github",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jaredhanson/idpiframe.git"
+  },
+  "license": "MIT",
+  "main": "main",
+  "dependencies": {
+    "querystring": "anchorjs/querystring:^0.0.1"
+  }
+}
