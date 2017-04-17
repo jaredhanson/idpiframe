@@ -13,7 +13,9 @@
   },
   "license": "MIT",
   "main": "main",
-  "dependencies": {},
+  "dependencies": {
+    "querystring": "git://github.com/anchorjs/querystring.git#v0.0.1"
+  },
   "jspm": {
     "name": "jaredhanson/idpiframe",
     "registry": "github",
