@@ -6,11 +6,14 @@ function(IFrame, qs, exports) {
   exports.start = function() {
     var hash = window.location.hash.substring(1); // slice off leading `#`
     var q = qs.parse(hash);
-    console.log(q)
-
-    var origin = q.origin;
-    var rpcToken = q.rpcToken;
     
+    // FIXME: Google's implemenation still delivers authResult from popup in this
+    // condition.   Make that work.
+    if (location.origin !== q.origin) {
+      return;
+    }
+    
+    // TODO: pass the clearCache option
     iframe = new IFrame(q.origin, q.rpcToken);
     iframe.bind();
   };
